@@ -23,6 +23,7 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
 
+
     if @restaurant.save
       redirect_to @restaurant, notice: "Restaurant was successfully created."
     else
@@ -45,6 +46,8 @@ class RestaurantsController < ApplicationController
     redirect_to restaurants_url, notice: "Restaurant was successfully destroyed."
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
@@ -53,6 +56,6 @@ class RestaurantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :address, :rating)
+      params.require(:restaurant).permit(:name, :address, :rating, :category)
     end
 end
