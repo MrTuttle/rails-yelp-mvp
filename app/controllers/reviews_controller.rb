@@ -1,8 +1,13 @@
 class ReviewsController < ApplicationController
+
+
+  #GET "restaurants/38/reviews/new"
 def new
       @restaurant = Restaurant.find(params[:restaurant_id])
       @review = Review.new
 
+
+      # POST "restaurants/38/reviews"
 end
     def create
       @restaurant = Restaurant.find(params[:restaurant_id])

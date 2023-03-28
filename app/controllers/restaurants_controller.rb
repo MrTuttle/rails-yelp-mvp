@@ -1,13 +1,21 @@
 class RestaurantsController < ApplicationController
+
+  #GET "restaurants"
   def index
     @restaurants = Restaurant.all
   end
+
+  #GET "restaurants/38"
   def show
     @restaurant = Restaurant.find(params[:id])
   end
+
+  #GET "restaurants/new"
   def new
     @restaurant = Restaurant.new
   end
+
+  #POST "restaurants"
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
@@ -16,6 +24,7 @@ class RestaurantsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
   private
   def restaurant_params
     params.require(:restaurant).permit(:name, :address, :phone_number, :category)
