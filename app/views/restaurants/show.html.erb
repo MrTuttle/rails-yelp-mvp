@@ -5,9 +5,17 @@
   <p><%= @restaurant.category %></p>
 
   <p><% @restaurant.reviews.each do |review| %></p>
-    <p>Rating : <%= review.rating %></p>
-    <p>Content :<%= review.content %></p>
+  <div class="d-flex">
+    <div class="card p-2">
+      <p>
+        <strong>Rating : </strong><%= review.rating %></br>
+        <strong>Content :</strong><%= review.content %>
+      </p>
+    </div>
+  </div>
 <% end %>
 
-<%= link_to "See all restaurants", restaurants_path %>
-<%= link_to "Add a new review", new_restaurant_review_path(@restaurant) %>
+<%= link_to "See all restaurants", restaurants_path, class:"btn btn-info" %>
+
+
+<%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class:"btn btn-info" %>
