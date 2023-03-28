@@ -1,9 +1,16 @@
 <h1>Index</h1>
 <% @restaurants.each do | restaurant | %>
-<ul>
-<li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
-</ul>
+  <ul>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant) %>
+    <br><strong>Nombre d'avis : </strong><%= restaurant.reviews.count %>
+    <br><strong>Moyenne des avis : </strong>
+    <% restaurant.reviews.each do | review |%>
+       <%= review.rating %>
+    <% end %>
+
+
+    </li>
+  </ul>
 <% end %>
 
 <%= link_to "Add a new restaurant", new_restaurant_path, class: 'btn btn-primary' %>
-
