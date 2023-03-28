@@ -4,7 +4,6 @@
   <%= f.input :address %>
   <%= f.input :phone_number %>
   <%= f.input :category %>
-  <%= f.submit %>
-  <%= redirect_to restaurant.name, restaurant_path(restaurant) %>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>
-<%= link_to "See all restaurants", restaurants_path %>
+<%= link_to "See all restaurants", restaurants_path, class: 'btn btn-primary mt-5' %>

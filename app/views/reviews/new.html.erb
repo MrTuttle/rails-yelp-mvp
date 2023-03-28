@@ -2,7 +2,7 @@
 <%= simple_form_for [@restaurant, @review] do |f| %>
   <%= f.input :rating %>
   <%= f.input :content %>
-  <%= f.submit %>
+  <%= f.submit class:'btn btn-primary mt-5' %>
 <% end %>
 
-<%= link_to "See all restaurants", restaurants_path %>
+<%= link_to "See all restaurants", restaurants_path, class: 'btn btn-primary mt-5' %>
